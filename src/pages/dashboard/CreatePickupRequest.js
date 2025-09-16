@@ -26,7 +26,7 @@ import {
 } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import dayjs from "dayjs";
-import CustomButton from "../ui/CustomButton";
+import CustomButton from "@/components/ui/CustomButton";
 
 // Komponen peta sederhana (dalam implementasi nyata, gunakan Google Maps API)
 const SimpleMap = ({ location }) => {
