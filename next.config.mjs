@@ -1,0 +1,14 @@
+/** @type {import('next').NextConfig} */
+
+const nextConfig = {
+  reactStrictMode: true,
+  images: {
+    domains: ["localhost", "your-production-domain.com"],
+  },
+  env: {
+    API_BASE_URL: process.env.API_BASE_URL,
+    GOOGLE_MAPS_API_KEY: process.env.GOOGLE_MAPS_API_KEY,
+  },
+};
+
+export default nextConfig;
