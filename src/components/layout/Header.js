@@ -64,7 +64,7 @@ const Header = () => {
             <Box sx={{ display: "flex", alignItems: "center", flexGrow: 1 }}>
               <Link href="/" passHref>
                 <Image
-                  src="/logo.png" // path file logo kamu (taruh di folder /public)
+                  src="/logo-v1.png" // path file logo kamu (taruh di folder /public)
                   alt="Setorin.id Logo"
                   width={112}
                   height={40}
