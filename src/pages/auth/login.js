@@ -8,8 +8,10 @@ import {
   Divider,
   Box,
   Alert,
+  IconButton,
+  InputAdornment,
 } from "@mui/material";
-import { Google } from "@mui/icons-material";
+import { Google, Visibility, VisibilityOff } from "@mui/icons-material";
 import Link from "next/link";
 import Layout from "@/components/layout/Layout";
 import CustomButton from "@/components/ui/CustomButton";
@@ -20,6 +22,7 @@ const Login = () => {
     password: "",
   });
   const [error, setError] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
@@ -32,6 +35,10 @@ const Login = () => {
     e.preventDefault();
     // Handle login logic here
     console.log("Login data:", formData);
+  };
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
   };
 
   return (
@@ -71,28 +78,29 @@ const Login = () => {
               fullWidth
               label="Password"
               name="password"
-              type="password"
+              type={showPassword ? "text" : "password"}
               value={formData.password}
               onChange={handleChange}
               margin="normal"
               required
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <IconButton
+                      aria-label="toggle password visibility"
+                      onClick={togglePasswordVisibility}
+                      edge="end"
+                    >
+                      {showPassword ? <VisibilityOff /> : <Visibility />}
+                    </IconButton>
+                  </InputAdornment>
+                ),
+              }}
             />
-            {/* <Box sx={{ textAlign: "right", mt: 1, mb: 2 }}>
+
+            <Box sx={{ textAlign: "right", mt: 1, mb: 2 }}>
               <Link href="/auth/forgot-password" passHref>
                 <Typography
-                  component="a"
-                  variant="body2"
-                  color="primary"
-                  sx={{ textDecoration: "none", cursor: "pointer" }}
-                >
-                  Lupa Password?
-                </Typography>
-              </Link>
-            </Box> */}
-            <Box sx={{ textAlign: "right", mt: 1, mb: 2 }}>
-              <Link href="/auth/forgot-password" passHref legacyBehavior>
-                <Typography
-                  component="a"
                   variant="body2"
                   color="primary"
                   sx={{ textDecoration: "none", cursor: "pointer" }}
@@ -125,24 +133,6 @@ const Login = () => {
             Masuk dengan Google
           </CustomButton>
 
-          {/* <Box sx={{ textAlign: "center" }}>
-            <Typography variant="body2" color="textSecondary">
-              Belum punya akun?{" "}
-              <Link href="/auth/register" passHref>
-                <Typography
-                  component="a"
-                  color="primary"
-                  sx={{
-                    textDecoration: "none",
-                    cursor: "pointer",
-                    fontWeight: 600,
-                  }}
-                >
-                  Daftar di sini
-                </Typography>
-              </Link>
-            </Typography>
-          </Box> */}
           <Box sx={{ textAlign: "center" }}>
             <Typography variant="body2" color="textSecondary">
               Belum punya akun?{" "}

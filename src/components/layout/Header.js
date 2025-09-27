@@ -147,7 +147,7 @@ const Header = () => {
             />
           ))}
 
-          {user ? (
+          {/* {user ? (
             <>
               <BottomNavigationAction
                 label="Dashboard"
@@ -169,14 +169,35 @@ const Header = () => {
                 component={Link}
                 href="/auth/login"
               />
-              {/* <BottomNavigationAction
-                label="Daftar"
-                icon={<AppRegistration />}
-                component={Link}
-                href="/auth/register"
-              /> */}
+           
             </>
-          )}
+          )} */}
+
+          {user
+            ? [
+                <BottomNavigationAction
+                  key="dashboard"
+                  label="Dashboard"
+                  icon={<Dashboard />}
+                  component={Link}
+                  href="/dashboard"
+                />,
+                <BottomNavigationAction
+                  key="logout"
+                  label="Keluar"
+                  icon={<ExitToApp />}
+                  onClick={logout}
+                />,
+              ]
+            : [
+                <BottomNavigationAction
+                  key="login"
+                  label="Masuk"
+                  icon={<Login />}
+                  component={Link}
+                  href="/auth/login"
+                />,
+              ]}
         </BottomNavigation>
       </Paper>
     </>

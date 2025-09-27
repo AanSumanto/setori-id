@@ -37,7 +37,7 @@ const Footer = () => {
       <Container maxWidth="lg">
         <Grid container spacing={4}>
           {/* Company Info */}
-          <Grid item xs={12} md={4}>
+          <Grid size={{ xs: 12, md: 4 }}>
             <Typography variant="h6" gutterBottom sx={{ fontWeight: "bold" }}>
               <Box
                 component="span"
@@ -107,7 +107,7 @@ const Footer = () => {
           </Grid>
 
           {/* Quick Links */}
-          <Grid item xs={12} sm={6} md={2}>
+          <Grid size={{ xs: 12, sm: 6, md: 2 }}>
             <Typography variant="h6" gutterBottom sx={{ fontWeight: "bold" }}>
               Perusahaan
             </Typography>
@@ -170,7 +170,7 @@ const Footer = () => {
           </Grid>
 
           {/* Layanan */}
-          <Grid item xs={12} sm={6} md={2}>
+          <Grid size={{ xs: 12, sm: 6, md: 2 }}>
             <Typography variant="h6" gutterBottom sx={{ fontWeight: "bold" }}>
               Layanan
             </Typography>
@@ -233,7 +233,7 @@ const Footer = () => {
           </Grid>
 
           {/* Support */}
-          <Grid item xs={12} sm={6} md={2}>
+          <Grid size={{ xs: 12, sm: 6, md: 2 }}>
             <Typography variant="h6" gutterBottom sx={{ fontWeight: "bold" }}>
               Dukungan
             </Typography>
@@ -296,7 +296,7 @@ const Footer = () => {
           </Grid>
 
           {/* Contact Info */}
-          <Grid item xs={12} sm={6} md={2}>
+          <Grid size={{ xs: 12, sm: 6, md: 2 }}>
             <Typography variant="h6" gutterBottom sx={{ fontWeight: "bold" }}>
               Kontak
             </Typography>
